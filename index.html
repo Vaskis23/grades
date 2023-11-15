@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>grades</title>
+</head>
+<body>
+
+<script>
+    let grades = [0, 0, 0];
+    // input three grades using prompt()
+    for (let i = 0; i < 3; i++) {
+        let userInput = parseFloat(prompt(`Enter grade ${i + 1}:`));
+
+        // Check if the range 1..10
+        if (isNaN(userInput) || userInput < 1 || userInput > 10) {
+            alert("Please enter a valid grade in the range 1..10.");
+            // If invalid input, the loop counter to repeat the current iteration
+            i--;
+        } else {
+            grades[i] = userInput;
+        }
+    }
+
+    // Homework 2: Calculate and log the average grade
+    let avg_grade = (grades[0] + grades[1] + grades[2]) / 3;
+    console.log(`Average grade = ${avg_grade.toFixed(2)}`);
+</script>
+
+</body>
+</html>
